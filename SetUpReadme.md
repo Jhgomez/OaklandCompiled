@@ -72,7 +72,7 @@ Check the reason in this [documentation](https://developer.mozilla.org/en-US/doc
 in this case is because of "They include other files" section. In the same documentation you can see two options to run a server locally
 either with `nodejs` or `python`, in our case we used `live server` extension in "VS Code".
 
-2. You can try the [entry files](../entryFIles), copy the generated code and paste in the assembler simulator
+2. You can try the [entry files](./entryFIles), copy the generated code and paste in the assembler simulator
 
 ## Notes
 
