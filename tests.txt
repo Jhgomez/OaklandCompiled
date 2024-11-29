@@ -1,0 +1,675 @@
+Compiler entries
+
+
+struct mio{ string z; }
+
+{
+var a = "a";
+var b = "b";
+var c = "c";
+var d = "d";
+
+mio some = mio{z: "shio"};
+some.z;
+
+var e = "e";
+}
+
+var a = "f";
+var b = "g";
+var c = "h";
+var d = "i";
+
+mio some = mio{z: "shio"};
+some.z;
+
+var e = "j";
+
+
+
+
+
+
+
+
+
+
+-----------------------------------------------------------------------
+Interpreter entries
+
+void hanoi(int n, string A, string B, string C) {
+    if (n == 1) {
+        System.out.println("Mover disco 1 de ", A, " a ", C);
+    } else {
+        hanoi(n - 1, A, C, B);
+        System.out.println("Mover disco ", n, " de ", A, " a ", C);
+        hanoi(n - 1, B, A, C);
+    }
+}
+
+hanoi(3, "A", "B", "C");
+
+--------------------------
+
+int[] numerosPares = {2, 4, 6, 8, 10};
+
+for (int i = 0; i < copiaPares.length(); i = i + 1) {
+    System.out.println(copiaPares[i]);
+}
+
+-----------------------
+struct yo{ string x; } struct el{ int b; }
+
+yo[][] titi = {
+ {yo{x:"n"}, yo{x:"o"}}
+,{yo{x:"p"}, yo{x:"q"}}
+};
+
+int index = 0;
+string mia(string a) {
+  for(var i: {"a","b","c", a}) {
+   if(index<2) {
+    titi[index][index].x = i;
+    index += 1;
+   }
+
+   if (i == a) return i;
+  }
+}
+
+var x = mia("x");
+
+System.out.println(x);
+System.out.println(titi[0][0].x, titi[0][1].x);
+System.out.println(titi[1][1].x);
+
+-------------------------------------
+struct yo{ string x; }
+struct el{ int b; }
+
+yo[][] mia(string a) {
+for(var i: {"a","b","c", a}) {
+continue;
+if (i == "c") return i;
+}
+return {{null}};
+}
+
+var x = mia("x");
+
+x = {{null}};
+
+
+//x = {{el{ b: 1}}};
+
+void otra(yo[] si) {
+return;
+}
+
+var x = otra({yo{x: "1"}});
+
+
+
+
+----------------------------------------------------------
+
+function return types with control flow statements
+
+
+string mia(string a) {
+for(var i: {"a","b","c", a}) {
+continue;
+if (i == "c") return i;
+}
+return "f";
+}
+
+string x = mia("x");
+
+x = "a";
+
+
+
+-------------------------------------------
+
+
+arrays set property y set variable
+
+
+
+//var a = {{{1}, {2}}, {{3}, {4}}};
+//a[0][0] = {1,2,3};
+
+
+struct yo { int[][][] x;}
+
+yo[][] m = 
+{
+ {
+yo{ x: {{{1}, {2}}, {{3}, {4}}} },
+yo{ x: {{{5}, {6}}, {{7}, {8}}} }
+ }
+,
+ {
+yo{ x: {{{9}, {10}}, {{11}, {12}}} },
+yo{ x: {{{13}, {14}}, {{15}, {16}}} }
+ }
+
+}
+;
+
+
+m[1][1].x[1][1] = {17,18};
+
+
+-------------------
+
+struct yo{ string edad;}
+
+var a = 3> 2 ? yo{edad: "33"} : 2;
+
+a = yo{edad: "33"};
+
+
+----------------------------
+
+
+struct yo{ string edad;}
+
+yo mimi = yo{edad: ""};
+
+switch("b") {
+
+ case "b":
+  var a = 1;
+ case "c":
+  var r = 2;
+default:
+  string nk = "";
+ case "d":
+  yo soy = yo{edad: "33"};
+break;
+ case "e":
+  var x = 2;
+ case "f":
+  yo soys = yo{edad: "33"};
+
+}
+
+//yo[] soy = {null};
+//soy = {null, null};
+
+for(int[][] a : {{{2,3}},{{5,6}}}) {
+if(a[0][0] > 2) break;
+a[0]={5,6,7};
+}
+
+
+-------------------------------------------------------
+
+
+
+struct yo{ string edad;}
+
+//yo[] soy = {null};
+//soy = {null, null};
+
+for(int[][] a : {{{2,3}},{{5,6}}}) {
+if(a[0][0] > 2) break;
+a[0]={5,6,7};
+}
+
+------------------------------
+
+struct ivanna { 
+int e; 
+}
+
+struct otraQueNoSeaDanielita {
+int e;
+}
+
+struct yo {
+ivanna miAmor;
+}
+
+yo x = null;
+x = null;
+x = null;
+x = yo{miAmor: ivanna{ e: 21 }};
+
+x.miAmor = null;
+
+int[] mm = new int[2];
+mm[0] += 2;
+typeof mm[0];
+
+
+-----------------------------------
+
+struct mi {
+string a;
+}
+
+struct me {
+mi[][][] b;
+}
+
+
+me c = me{b:{ {{mi{a:"1" }}, {}}, { {}, {null}} }};
+
+c = me{b:{ { {mi{a:"oye" }}, {} }, { { }, { null}} }};
+
+//c.b[0][0][0].a += "oshe";
+
+string mike(me a, mi[][] b){
+a.b[0][0][0].a += "funcion";
+b[0][0].a += b[1][0].a; 
+
+}
+
+mike(c, {{}});
+
+
+=======================
+
+struct mi {
+string a;
+}
+
+struct me {
+mi[][][] b;
+}
+
+
+me c = me{b:
+{
+
+ {
+  {
+   mi{a:"" }
+  },
+  {
+
+  }
+ },
+ {
+  {
+
+  },
+  {
+   null
+  }
+ }
+
+}
+
+};
+
+c.b[0][0][0].a = "";
+
+c = me{b:
+{
+
+ {
+  {
+   mi{a:"oye" }
+  },
+  {
+
+  }
+ },
+ {
+  {
+
+  },
+  {
+   null
+  }
+ }
+
+}
+
+};
+
+==============================================
+
+struct mi {
+string[][][] a;
+}
+
+struct me {
+mi[][][] b;
+}
+
+me c = me{b:
+{
+
+ {
+  {
+   mi{a:{{{},{}}} }
+  },
+  {
+
+  }
+ },
+ {
+  {
+
+  },
+  {
+   null
+  }
+ }
+
+}
+
+
+
+};
+
+c.b[0][0][0].a[0][0][0] = "chi";
+ 
+
+=====================================================
+struct Mascota {
+string[][][] nombre;
+}
+struct Persona {
+string nombre;
+//int alto;
+Mascota[][] edad;
+}
+
+
+Persona x = Persona{ 
+  nombre:"yo",
+  edad: {
+    {     
+      Mascota{ 
+        nombre:new string[2][2][1] 
+      },
+      Mascota{ 
+        nombre:{{{"e"},{"f"}},{{"g"},{"h"}}} 
+      }
+    },
+    {
+      Mascota{ 
+        nombre:{{{"i"},{"j"}},{{"i"},{"l"}}} 
+      },
+      Mascota{ 
+        nombre:{{{"m"},{"n"}},{{"o"},{"p"}}} 
+      }
+    }
+  }
+};
+
+------------------------------
+struct Mascota {
+string[][][] nombre;
+}
+struct Persona {
+string nombre;
+//int alto;
+Mascota[][] edad;
+}
+
+
+Persona x = Persona{ 
+  nombre:"yo",
+  edad: {
+    {     
+      Mascota{ 
+        nombre:{{{"a"},{"b"}},{{"c"},{"d"}}} 
+      },
+      Mascota{ 
+        nombre:{{{"e"},{"f"}},{{"e"},{"g"}}} 
+      }
+    },
+    {
+      Mascota{ 
+        nombre:{{{"h"},{"i"}},{{"j"},{"l"}}} 
+      },
+      Mascota{ 
+        nombre:{{{"m"},{"n"}},{{"o"},{"p"}}} 
+      }
+    }
+  }
+};
+
+//x.edad.nombre[1];
+
+//Mascota z = Mascota{ nombre:{{{"a"},{"b"}},{{"c"},{"d"}}} };
+x.edad[1][1].nombre[0][0][0];
+
+-------------------
+struct Mascota {
+string[] nombre;
+}
+struct Persona {
+string nombre;
+int alto;
+Mascota edad;
+}
+
+Mascota{ nombre:"sisisis" };
+
+// struct Mascota {
+// string nombre;
+// }
+// struct Persona {
+// string nombre;
+// int edad;
+// Mascota edad;
+// }
+
+// Mascota s;
+// int y = 1;
+// int[][] x = {{y,y},{1,2}};
+// Mascota[][] z = {{null},{null}};
+
+// x[1];
+// z;
+// s;
+
+String mkl(
+Int a
+, String a
+) {
+var a = new Int[3][4];
+Int[][] b = new Int[3][4];
+var c = {new Int[3][4],2,3};
+Int[] d = typeof {new Int[3][4],2,3};
+
+String[] a = x[2][3];
+break;
+continue;
+{ continue;}
+{ break;}
+return false;
+var d = d;
+
+while (true) {
+    String[] a = x[2][3];
+    break;
+    { return;}
+    { break;}
+    return;
+    var d = true;
+} 
+} 
+
+
+String mkl(
+Int a
+, String a
+) {
+
+String[] a = x[2][3];
+break;
+continue;
+{ continue;}
+{ break;}
+return false;
+var d = d;
+
+switch(a) {
+case true:
+String a = 'a';
+break;
+case "":
+String a;
+break;
+{ continue;}
+{ break;}
+default:
+String[] a = x[2][3];
+break;
+{ return 1;}
+{ break;}
+return;
+}
+} 
+
+// while (true) {
+// String[] a = x[2][3];
+// break;
+// { continue;}
+// { break;}
+// return;
+// var d = true;
+// }
+
+// if(true) {
+// String[] a = x[2][3];
+// break;
+// { continue;}
+// { break;}
+// return;
+// var d;
+// }
+
+
+// switch(a) {
+// case true:
+// String a = 'a';
+// break;
+// case "":
+// String a;
+// break;
+// { continue;}
+// { break;}
+// default:
+// String[] a = x[2][3];
+// break;
+// { continue;}
+// { break;}
+// return;
+// }
+
+
+
+
+
+//for(String a = b = v; ;) {
+//c = 1>=4;
+//break;
+//}
+
+//var x = m;
+
+
+
+
+
+
+
+
+
+
+
+
+//{ type{ type, arrayLevel }, name, value(expression) }
+    visitVarDefinition(node) {
+        // 1. check if something exists
+        const definedNode = this.checkVariableExists(node.name)
+        const location = node.location
+
+        // 2. throw error if exists
+        if(definedNode) throw new OakError(location, `variable ${node.name} already exists `) 
+
+        // 2.b check if type exists
+        const typeNode = node.type.interpret(this)
+        const expected = typeNode.type
+        const classDef = this.environment.get(expected)
+        let defaultVal
+        if(classDef instanceof OakClass) {
+            defaultVal = new nodes.Literal({type: 'null', value: null})
+        } else {
+            defaultVal = this.nativeDefVal[expected]
+            if(defaultVal != undefined ) {
+                defaultVal = new nodes.Literal({type: expected, value: defaultVal})
+            }
+        }
+    
+        
+
+        // 2.c if default value doesn't exists means type doesn't exists, if it exists and expression is null, assign it
+        if(defaultVal == undefined) {
+            throw new OakError(location, 'type doesnt exists ')
+        } else if(!node.value) {
+            // 2.d If value expression doesn't exist assign default check if type exists to assign value
+            node.value = defaultVal
+        }
+
+        /** 
+         * 3. this step may change but for now we are going to "spend" a computation
+         * by interpreting the inner nodes, they are all interpreted everytime as for now,
+         * all literals are saved as nodes, arrays, instances are saved as
+         * a reference/instance, all of them has a type property
+         */ 
+        const value = node.value.interpret(this)
+        // (hacky way to save some interpretations when it is accessed)
+        node.value = value
+
+        // 4. check if type are same and set
+        
+        const found = value.type
+        if(expected == found || found == 'null') {
+            // 5. check if type expected is an array, arrayLevel > 1 means is an array
+            if(typeNode.arrayLevel > 0 && value instanceof OakArray) {
+                if(value.deep == typeNode.arrayLevel) {
+                    this.environment.set(node.name, node.value)
+                    return
+                }
+                const expectedDeep = "[]".repeat(typeNode.arrayLevel)
+                const foundDeep = "[]".repeat(value.deep)
+                throw new OakError(location, `expected ${expectedDeep} but found ${foundDeep} `)
+            }
+
+            if(typeNode.arrayLevel>0 && classDef instanceof OakClass && found == 'null') throw new OakError(location, `expected ${expected}${"[]".repeat(typeNode.arrayLevel)} but found ${found} `)
+            
+            if(classDef instanceof OakClass) {
+                this.environment.set(node.name, node.value)
+                return
+            }
+
+            if(expected == found) {
+                this.environment.set(node.name, node.value)
+                return
+            }
+            
+            throw new OakError(location, `expected ${expected} but found ${found} `)
+        }
+
+        // int fits into float edge case
+        if(expected == 'float' && found == 'int') {
+            // at this point node.value should be a literal
+            node.value.type = 'float'
+            node.value.value = parseFloat(`${node.value.value}.00`)
+            this.environment.set(node.name, node.value)
+            return
+        }
+
+        throw new OakError(location, `expected ${expected} but found ${found} `)
+    }
