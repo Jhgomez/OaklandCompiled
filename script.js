@@ -1,8 +1,8 @@
-import { parse } from '../oakland.js'
-import { VisitorInterpreter } from '../interpreter.js'
+import { parse } from './oakland.js'
+import { VisitorInterpreter } from './interpreter.js'
 import * as aceEditor from 'https://cdn.jsdelivr.net/npm/ace-builds@1.36.2/+esm'
-import { OakError } from '../errors/oakerror.js';
-import { OakCompiler } from './compiler.js';
+import { OakError } from './errors/oakerror.js';
+import { OakCompiler } from './assembly/compiler.js';
 
 var error = document.getElementById("error")
 var input = document.createElement('input');
